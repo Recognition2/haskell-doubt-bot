@@ -14,8 +14,8 @@ data Action
   = NoOp
   | Echo Text
 
-echoBot :: BotApp Model Action
-echoBot = BotApp
+doubtBot :: BotApp Model Action
+doubtBot = BotApp
   { botInitialModel = ()
   , botAction = updateToAction
   , botHandler = handleAction
@@ -40,7 +40,7 @@ handleAction action model = case action of
 run :: Token -> IO ()
 run token = do
   env <- defaultTelegramClientEnv token
-  startBot_ (conversationBot updateChatId echoBot) env
+  startBot_ (conversationBot updateChatId doubtBot) env
 
 main :: IO ()
 main = do
