@@ -118,7 +118,7 @@ def init_bot(botname, updater):
 
     for pack in bot['packs']:
         stickerpack = updater.bot.get_sticker_set(pack)
-        print('\tLoaded stickerpack %s containing %d stickers' % 
+        print('\tLoaded stickerpack \'%s\' containing %d stickers' % 
                 (stickerpack.title, len(stickerpack.stickers)))
         STICKERS[botname].extend(stickerpack.stickers)
     print('\t%d stickers loaded for %s' % (len(STICKERS[botname]), botname))
